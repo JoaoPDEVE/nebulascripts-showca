@@ -72,7 +72,27 @@ Antes de colocar o site no ar, verifique:
 
 ### 🌐 Opções de Hospedagem
 
-#### Opção 1: Vercel (Recomendado - Grátis)
+#### Opção 1: GitHub Pages (Configurado e Pronto - Grátis) ⭐
+
+Este repositório já está configurado para deploy automático no GitHub Pages!
+
+**O que fazer:**
+1. Vá para Settings → Pages no repositório GitHub
+2. Em "Source", selecione **GitHub Actions**
+3. Faça push para a branch `main` ou merge este Pull Request
+4. Aguarde o workflow completar (2-3 minutos)
+5. Acesse: **https://joaopdeve.github.io/nebulascripts-showca/**
+
+📖 **Guia detalhado:** Veja [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md) para instruções completas em português.
+
+**Vantagens:**
+- ✅ Já configurado neste projeto
+- ✅ Deploy automático ao fazer push
+- ✅ Grátis para repositórios públicos
+- ✅ SSL/HTTPS incluído
+- ✅ Suporte a domínios personalizados
+
+#### Opção 2: Vercel (Recomendado - Grátis)
 
 1. Crie uma conta em [vercel.com](https://vercel.com)
 2. Instale o Vercel CLI:
@@ -91,7 +111,7 @@ Antes de colocar o site no ar, verifique:
 - Output Directory: `dist`
 - Install Command: `npm install`
 
-#### Opção 2: Netlify (Grátis)
+#### Opção 3: Netlify (Grátis)
 
 1. Crie uma conta em [netlify.com](https://netlify.com)
 2. Arraste a pasta `dist` (após `npm run build`) para o Netlify Drop
@@ -100,30 +120,6 @@ Antes de colocar o site no ar, verifique:
 **Configurações:**
 - Build command: `npm run build`
 - Publish directory: `dist`
-
-#### Opção 3: GitHub Pages (Grátis)
-
-1. Instale gh-pages:
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-
-2. Adicione ao `package.json`:
-   ```json
-   {
-     "scripts": {
-       "deploy": "npm run build && gh-pages -d dist"
-     },
-     "homepage": "https://seuusuario.github.io/seu-repo"
-   }
-   ```
-
-3. Execute:
-   ```bash
-   npm run deploy
-   ```
-
-4. Configure GitHub Pages para usar a branch `gh-pages`
 
 #### Opção 4: Servidor Próprio (VPS/Cloud)
 
