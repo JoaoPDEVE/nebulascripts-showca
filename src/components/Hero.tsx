@@ -53,14 +53,6 @@ export function Hero() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 glow-purple-hover transition-all"
-              onClick={() => window.open(discordUrl, '_blank')}
-            >
-              {t('hero.primaryCta')}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white/20 hover:bg-white/5"
               onClick={scrollToHowItWorks}
             >
               {t('hero.secondaryCta')}
