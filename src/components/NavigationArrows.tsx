@@ -34,23 +34,25 @@ export function NavigationArrows() {
       <button
         onClick={() => scroll('left')}
         className={cn(
-          'fixed left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full glass-card flex items-center justify-center transition-all duration-300 hover:scale-110 hover:glow-purple',
+          'fixed left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full glass-card flex items-center justify-center transition-all duration-300 hover:scale-110 hover:glow-purple focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
           showLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
         aria-label="Seção anterior"
+        disabled={!showLeft}
       >
-        <CaretLeft size={24} className="text-foreground" weight="bold" />
+        <CaretLeft size={24} className="text-foreground" weight="bold" aria-hidden="true" />
       </button>
 
       <button
         onClick={() => scroll('right')}
         className={cn(
-          'fixed right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full glass-card flex items-center justify-center transition-all duration-300 hover:scale-110 hover:glow-purple',
+          'fixed right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full glass-card flex items-center justify-center transition-all duration-300 hover:scale-110 hover:glow-purple lg:right-16 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
           showRight ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
         aria-label="Próxima seção"
+        disabled={!showRight}
       >
-        <CaretRight size={24} className="text-foreground" weight="bold" />
+        <CaretRight size={24} className="text-foreground" weight="bold" aria-hidden="true" />
       </button>
     </>
   )

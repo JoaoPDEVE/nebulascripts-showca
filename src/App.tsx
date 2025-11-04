@@ -4,6 +4,8 @@ import { Footer } from '@/components/Footer'
 import { SectionDots } from '@/components/SectionDots'
 import { NavigationArrows } from '@/components/NavigationArrows'
 import { AnimatedBackground } from '@/components/AnimatedBackground'
+import { NetworkStatus } from '@/components/NetworkStatus'
+import { BackToTop } from '@/components/BackToTop'
 import { Home } from '@/routes/Home'
 import { Terms } from '@/routes/Terms'
 import { Privacy } from '@/routes/Privacy'
@@ -17,6 +19,7 @@ function AppContent() {
   return (
     <div className="h-screen flex flex-col overflow-hidden relative">
       <AnimatedBackground />
+      <NetworkStatus />
       <Header />
       <main className="flex-1 overflow-hidden relative z-10">
         <Routes>
@@ -39,9 +42,10 @@ function AppContent() {
         <>
           <SectionDots />
           <NavigationArrows />
+          <BackToTop />
         </>
       )}
-      <Toaster />
+      <Toaster richColors position="top-center" />
     </div>
   )
 }

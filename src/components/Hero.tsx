@@ -17,18 +17,36 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden" aria-label="Hero section">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent pointer-events-none" />
       
-      <div className="absolute top-1/4 left-10 opacity-20">
+      <motion.div 
+        className="absolute top-1/4 left-10 opacity-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.2, scale: 1 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        aria-hidden="true"
+      >
         <Code size={80} weight="duotone" className="text-primary animate-pulse" />
-      </div>
-      <div className="absolute top-1/3 right-10 opacity-20">
+      </motion.div>
+      <motion.div 
+        className="absolute top-1/3 right-10 opacity-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.2, scale: 1 }}
+        transition={{ duration: 1, delay: 0.4 }}
+        aria-hidden="true"
+      >
         <ShieldCheck size={80} weight="duotone" className="text-accent animate-pulse" style={{ animationDelay: '0.5s' }} />
-      </div>
-      <div className="absolute bottom-1/4 left-1/4 opacity-20">
+      </motion.div>
+      <motion.div 
+        className="absolute bottom-1/4 left-1/4 opacity-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.2, scale: 1 }}
+        transition={{ duration: 1, delay: 0.6 }}
+        aria-hidden="true"
+      >
         <Lightning size={60} weight="duotone" className="text-primary animate-pulse" style={{ animationDelay: '1s' }} />
-      </div>
+      </motion.div>
       
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <motion.div
@@ -41,7 +59,7 @@ export function Hero() {
             {t('hero.badge')}
           </Badge>
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
             {t('hero.title')}
           </h1>
 
@@ -52,11 +70,12 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 glow-purple-hover transition-all"
+              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 glow-purple-hover transition-all transform hover:scale-105"
               onClick={scrollToHowItWorks}
+              aria-label={t('hero.secondaryCta')}
             >
               {t('hero.secondaryCta')}
-              <ArrowDown className="ml-2" />
+              <ArrowDown className="ml-2" aria-hidden="true" />
             </Button>
           </div>
 
@@ -67,18 +86,30 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm"
           >
             {(t('hero.highlights', { returnObjects: true }) as string[]).map((highlight, i) => (
-              <div key={i} className="flex items-center gap-2 text-muted-foreground">
-                <Check className="text-primary flex-shrink-0" weight="bold" size={20} />
+              <motion.div 
+                key={i} 
+                className="flex items-center gap-2 text-muted-foreground"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
+              >
+                <Check className="text-primary flex-shrink-0" weight="bold" size={20} aria-hidden="true" />
                 <span className="font-medium">{highlight}</span>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <motion.div 
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+        aria-hidden="true"
+      >
         <ArrowDown className="text-muted-foreground" size={24} />
-      </div>
+      </motion.div>
     </section>
   )
 }

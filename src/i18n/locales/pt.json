@@ -7,6 +7,7 @@
     "faq": "FAQ",
     "team": "Equipe",
     "discord": "Discord",
+    "community": "Comunidade",
     "contact": "Contato",
     "terms": "Termos",
     "privacy": "Privacidade",
@@ -51,9 +52,11 @@
     "imagesAlt": "Imagem da demonstração do produto"
   },
   "discord": {
-    "title": "Junte-se ao nosso Discord",
+    "title": "Junte-se à nossa comunidade",
     "desc": "Entre no servidor para suporte, atualizações e detalhes de compra.",
     "cta": "Entrar no Discord",
+    "open": "Abrir Discord",
+    "copy": "Copiar Link",
     "copied": "Link copiado!",
     "error": "Erro ao copiar link"
   },

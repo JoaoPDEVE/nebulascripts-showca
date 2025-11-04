@@ -44,13 +44,17 @@ export function SectionDots() {
   }
 
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3">
+    <nav 
+      className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3"
+      aria-label="Navegação por seções"
+    >
       {sections.map((section) => (
         <button
           key={section.id}
           onClick={() => scrollToSection(section.id)}
-          className="group relative"
+          className="group relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-full"
           aria-label={t(section.labelKey)}
+          aria-current={activeSection === section.id ? 'true' : 'false'}
         >
           <div
             className={cn(
@@ -60,11 +64,11 @@ export function SectionDots() {
                 : 'bg-muted-foreground/30 hover:bg-muted-foreground/60 hover:scale-125'
             )}
           />
-          <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 glass-card text-xs text-foreground rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 glass-card text-xs text-foreground rounded-md opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             {t(section.labelKey)}
           </span>
         </button>
       ))}
-    </div>
+    </nav>
   )
 }

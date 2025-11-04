@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { List, X, DiscordLogo, Check } from '@phosphor-icons/react'
+import { List, X, DiscordLogo, Check, Users, Copy, ArrowSquareOut } from '@phosphor-icons/react'
 import { LanguageToggle } from './LanguageToggle'
 import { Button } from '@/components/ui/button'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover'
 import { cn } from '@/lib/utils'
 import { toast } from 'sonner'
 
@@ -11,6 +16,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const [copied, setCopied] = useState(false)
+  const [communityOpen, setCommunityOpen] = useState(false)
   const { t } = useTranslation()
   const location = useLocation()
   
@@ -63,11 +69,19 @@ export function Header() {
     try {
       await navigator.clipboard.writeText(discordLink)
       setCopied(true)
-      toast.success(t('discord.copied') || 'Link do Discord copiado!')
+      toast.success(t('discord.copied') || 'Link do Discord copiado!', {
+        description: discordLink,
+        duration: 3000,
+      })
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {
       toast.error(t('discord.error') || 'Erro ao copiar link')
     }
+  }
+
+  const openDiscord = () => {
+    window.open(discordLink, '_blank', 'noopener,noreferrer')
+    setCommunityOpen(false)
   }
 
   return (
@@ -109,20 +123,50 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Button
-              onClick={copyDiscordLink}
-              className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground glow-purple-hover"
-              size="sm"
-            >
-              {copied ? <Check weight="bold" /> : <DiscordLogo weight="fill" />}
-              <span>{copied ? t('discord.copied') || 'Copiado!' : 'Discord'}</span>
-            </Button>
+            <Popover open={communityOpen} onOpenChange={setCommunityOpen}>
+              <PopoverTrigger asChild>
+                <Button
+                  className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground glow-purple-hover transition-all"
+                  size="sm"
+                  aria-label={t('nav.community') || 'Comunidade'}
+                >
+                  <Users weight="fill" />
+                  <span>{t('nav.community') || 'Comunidade'}</span>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-72 p-3 glass-card border-white/20" align="end">
+                <div className="space-y-1">
+                  <p className="text-sm font-medium mb-3">{t('discord.title') || 'Junte-se à nossa comunidade'}</p>
+                  <Button
+                    onClick={openDiscord}
+                    className="w-full justify-start gap-3 bg-[#5865F2] hover:bg-[#4752C4] text-white"
+                    size="sm"
+                  >
+                    <ArrowSquareOut size={18} weight="bold" />
+                    <span>{t('discord.open') || 'Abrir Discord'}</span>
+                  </Button>
+                  <Button
+                    onClick={copyDiscordLink}
+                    variant="outline"
+                    className="w-full justify-start gap-3"
+                    size="sm"
+                  >
+                    {copied ? <Check size={18} weight="bold" className="text-primary" /> : <Copy size={18} />}
+                    <span>{copied ? (t('discord.copied') || 'Copiado!') : (t('discord.copy') || 'Copiar Link')}</span>
+                  </Button>
+                </div>
+                <div className="mt-3 pt-3 border-t border-white/10">
+                  <p className="text-xs text-muted-foreground">{discordLink}</p>
+                </div>
+              </PopoverContent>
+            </Popover>
             <LanguageToggle />
             <Button
               size="icon"
               variant="ghost"
               className="md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             >
               {mobileMenuOpen ? <X /> : <List />}
             </Button>
@@ -130,7 +174,7 @@ export function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-white/10">
+          <nav className="md:hidden py-4 border-t border-white/10 animate-in fade-in slide-in-from-top-2 duration-200">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <button
@@ -146,14 +190,25 @@ export function Header() {
                   {item.label}
                 </button>
               ))}
-              <Button
-                onClick={copyDiscordLink}
-                className="w-full mt-2 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
-                size="sm"
-              >
-                {copied ? <Check weight="bold" /> : <DiscordLogo weight="fill" />}
-                <span>{copied ? t('discord.copied') || 'Copiado!' : 'Discord'}</span>
-              </Button>
+              <div className="mt-3 pt-3 border-t border-white/10 space-y-2">
+                <Button
+                  onClick={openDiscord}
+                  className="w-full flex items-center justify-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white"
+                  size="sm"
+                >
+                  <DiscordLogo weight="fill" />
+                  <span>{t('discord.open') || 'Abrir Discord'}</span>
+                </Button>
+                <Button
+                  onClick={copyDiscordLink}
+                  variant="outline"
+                  className="w-full flex items-center justify-center gap-2"
+                  size="sm"
+                >
+                  {copied ? <Check weight="bold" /> : <Copy />}
+                  <span>{copied ? (t('discord.copied') || 'Copiado!') : (t('discord.copy') || 'Copiar Link')}</span>
+                </Button>
+              </div>
             </div>
           </nav>
         )}

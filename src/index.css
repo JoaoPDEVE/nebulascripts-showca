@@ -87,8 +87,16 @@
     box-shadow: 0 0 20px rgba(156, 110, 238, 0.4), 0 0 40px rgba(156, 110, 238, 0.2);
   }
   
+  .glow-purple-hover {
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
   .glow-purple-hover:hover {
     box-shadow: 0 0 30px rgba(156, 110, 238, 0.6), 0 0 60px rgba(156, 110, 238, 0.3);
+  }
+  
+  .glow-purple-hover:active {
+    transform: scale(0.98);
   }
   
   .text-gradient {
@@ -97,6 +105,38 @@
   
   .mono {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .animate-in {
+    animation-fill-mode: both;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .slide-in-from-top-2 {
+    animation: slideInFromTop 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 

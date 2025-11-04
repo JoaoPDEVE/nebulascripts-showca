@@ -1,4 +1,4 @@
-# NebulaScripts - Product Requirements Document
+# Kaelix Hub - Product Requirements Document
 
 A compliant showcase website for Roblox scripts and utilities that respect Roblox guidelines.
 
@@ -9,10 +9,135 @@ Present high-quality, legal Roblox scripts and utilities in a visually striking 
 **Experience Qualities**:
 1. **Trustworthy** - Clear messaging that we respect Roblox Terms of Service with no exploits or cheats
 2. **Professional** - Polished dark aesthetic with purple/neon accents that feels premium without being aggressive
-3. **Accessible** - Bilingual (PT/EN), clear navigation, excellent contrast ratios, and respect for reduced motion preferences
+3. **Accessible** - Bilingual (PT/EN), clear navigation, excellent contrast ratios, keyboard navigation, and respect for reduced motion preferences
 
 **Complexity Level**: Content Showcase (information-focused)
 - This is a marketing/landing page focused on presenting information about compliant Roblox utilities. The primary goal is education and Discord community building, not complex application features. State is minimal (language preference only).
+
+## Recent Improvements (Current Iteration)
+
+### 🎯 Enhanced Community Access
+- **Functionality**: Improved Discord integration with popover menu in header
+- **Purpose**: Provide multiple ways to access Discord community (direct open or copy link)
+- **Features**: 
+  - New "Comunidade" button with professional dropdown menu
+  - Copy link functionality with rich toast feedback showing the URL
+  - Direct Discord open in new tab with proper security attributes
+  - Mobile-optimized with separate action buttons
+  - Official Discord brand color (#5865F2) for better recognition
+- **UX**: Better visual hierarchy, loading states, and accessible interactions
+
+### ⚡ Performance Optimizations
+- **Scroll Performance**: Added intelligent throttling (16ms) to horizontal scroll handler for buttery-smooth 60fps scrolling
+- **Animation Performance**: Optimized Framer Motion animations with proper delays, staggering, and reduced motion support
+- **Loading States**: Created dedicated Loading component for better perceived performance
+- **Event Handling**: Passive event listeners where appropriate for better scroll performance
+- **Custom Hook**: useScrollVelocity hook for detecting scroll velocity and direction
+
+### ♿ Accessibility Improvements (WCAG 2.1 AA Compliant)
+- **Keyboard Navigation**: 
+  - Enhanced focus states with visible 2px primary-colored rings
+  - Proper tab order throughout the application
+  - Focus-visible styles that only show for keyboard users
+- **ARIA Labels**: 
+  - Added comprehensive aria-labels to all interactive elements
+  - aria-current for active navigation states
+  - aria-hidden for decorative icons
+  - Proper semantic landmarks (nav, main, section, etc.)
+- **Screen Readers**: 
+  - Improved semantic HTML structure
+  - Better heading hierarchy (h1→h2→h3)
+  - Descriptive button labels
+- **Focus Management**: 
+  - Visible focus indicators on all interactive elements
+  - Logical focus order
+  - No keyboard traps
+
+### 🔍 SEO & Meta Tags
+- **Enhanced Meta Tags**: 
+  - Twitter card support (summary_large_image)
+  - Theme color for mobile browsers (#7c3aed)
+  - Keywords meta for better indexing
+  - Author information
+  - Site name in OG tags
+- **Language**: Set proper lang="pt-BR" on HTML element for better i18n
+- **Social Sharing**: Complete OG protocol implementation with site_name, description, and title
+- **Performance**: Preconnect to Google Fonts for faster loading
+
+### 🎨 Visual Polish & Micro-interactions
+- **Animations**: 
+  - Staggered fade-in on hero highlights (100ms intervals)
+  - Background icon animations with different delays
+  - Smooth slide-in for mobile menu
+  - Scale transforms on button hovers (1.05x)
+  - Active state scales (0.98x) for tactile feedback
+- **Hover Effects**: 
+  - Enhanced glow effects with smooth 0.3s transitions
+  - Scale transforms for depth perception
+  - Color transitions on text elements
+- **Transitions**: 
+  - Consistent timing functions across UI (ease-in-out)
+  - Appropriate durations (0.2-0.3s for interactions)
+  - Respects prefers-reduced-motion
+- **Glass Effects**: 
+  - Improved glass-card with backdrop-blur-sm
+  - Better border contrasts (white/20)
+
+### 🚀 UX Enhancements
+- **Toast Notifications**: 
+  - Rich colors for better visual feedback
+  - Descriptions showing copied content
+  - Appropriate duration (2-3s)
+  - Top-center positioning for visibility
+- **Language Selector**: 
+  - Upgraded to dropdown menu with checkmarks
+  - Shows current selection clearly
+  - Toast feedback on language change
+  - Persistent selection via localStorage
+- **Mobile Menu**: 
+  - Animated slide-in with fade effect
+  - Separated Discord actions (Open/Copy)
+  - Better touch targets (44px minimum)
+- **Footer**: 
+  - Added "Made with ❤️" personalization
+  - Improved responsive layout
+  - Better link hover states
+  - Backdrop blur for layered effect
+- **Navigation**: 
+  - Arrows repositioned to avoid dot navigation overlap on desktop
+  - Disabled state on arrows when at boundaries
+  - Better visual feedback on hover/focus
+  - Smooth scroll behavior throughout
+
+### 📊 New Features
+- **Network Status Indicator**: 
+  - Real-time online/offline detection
+  - Animated notification with icons
+  - Auto-dismisses after 3s when online
+  - Stays visible when offline
+- **Scroll Progress Bar**: 
+  - Visual progress indicator at top of page
+  - Gradient styling matching brand colors
+  - Smooth animation tied to scroll position
+  - Subtle glow effect
+- **Back to Top Button**: 
+  - Appears after scrolling past 100px
+  - Animated entrance/exit
+  - Circular floating action button
+  - Smooth scroll to hero section
+  - Positioned to avoid navigation conflicts
+- **Loading Component**: 
+  - Dual spinning ring animation
+  - Branded colors
+  - Centered with backdrop
+  - Smooth fade-in animation
+
+### 🛠️ Code Quality
+- **TypeScript**: Full type safety maintained throughout
+- **Custom Hooks**: Reusable hooks for scroll, mobile detection, and velocity
+- **Component Structure**: Clean separation of concerns
+- **Performance**: Optimized re-renders with proper memoization
+- **Accessibility**: ARIA attributes and semantic HTML throughout
 
 ## Essential Features
 
