@@ -36,7 +36,7 @@ export function Home() {
       <div id="team" className="min-w-full snap-start flex-shrink-0 overflow-y-auto">
         <Team />
       </div>
-      <div className="min-w-full snap-start flex-shrink-0 overflow-y-auto">
+      <div id="discord" className="min-w-full snap-start flex-shrink-0 overflow-y-auto">
         <DiscordCTA />
       </div>
     </div>

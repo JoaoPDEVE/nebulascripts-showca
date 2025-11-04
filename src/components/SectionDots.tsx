@@ -9,6 +9,7 @@ const sections = [
   { id: 'showcase', labelKey: 'nav.showcase' },
   { id: 'faq', labelKey: 'nav.faq' },
   { id: 'team', labelKey: 'nav.team' },
+  { id: 'discord', labelKey: 'nav.contact' },
 ]
 
 export function SectionDots() {
@@ -43,7 +44,7 @@ export function SectionDots() {
   }
 
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-3">
+    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3">
       {sections.map((section) => (
         <button
           key={section.id}
@@ -55,11 +56,11 @@ export function SectionDots() {
             className={cn(
               'w-2 h-2 rounded-full transition-all duration-300',
               activeSection === section.id
-                ? 'bg-primary scale-125'
-                : 'bg-muted-foreground/30 hover:bg-muted-foreground/60'
+                ? 'bg-primary scale-150 glow-purple'
+                : 'bg-muted-foreground/30 hover:bg-muted-foreground/60 hover:scale-125'
             )}
           />
-          <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-2 py-1 bg-card/90 backdrop-blur-sm text-xs text-foreground rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 glass-card text-xs text-foreground rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             {t(section.labelKey)}
           </span>
         </button>

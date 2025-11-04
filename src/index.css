@@ -84,15 +84,15 @@
   }
   
   .glow-purple {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 0 20px rgba(156, 110, 238, 0.4), 0 0 40px rgba(156, 110, 238, 0.2);
   }
   
   .glow-purple-hover:hover {
-    box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+    box-shadow: 0 0 30px rgba(156, 110, 238, 0.6), 0 0 60px rgba(156, 110, 238, 0.3);
   }
   
   .text-gradient {
-    @apply bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent;
   }
   
   .mono {

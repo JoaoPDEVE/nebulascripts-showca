@@ -6,7 +6,7 @@ export function useHorizontalScroll(ref: RefObject<HTMLElement | null>) {
     if (!element) return
 
     const handleWheel = (e: WheelEvent) => {
-      if (e.deltaY !== 0) {
+      if (e.deltaY !== 0 && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         e.preventDefault()
         element.scrollBy({
           left: e.deltaY,
@@ -20,10 +20,12 @@ export function useHorizontalScroll(ref: RefObject<HTMLElement | null>) {
       
       switch (e.key) {
         case 'ArrowRight':
+        case 'PageDown':
           e.preventDefault()
           element.scrollBy({ left: width, behavior: 'smooth' })
           break
         case 'ArrowLeft':
+        case 'PageUp':
           e.preventDefault()
           element.scrollBy({ left: -width, behavior: 'smooth' })
           break

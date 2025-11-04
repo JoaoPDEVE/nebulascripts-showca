@@ -34,10 +34,10 @@ export function NavigationArrows() {
       <button
         onClick={() => scroll('left')}
         className={cn(
-          'fixed left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm border border-border flex items-center justify-center transition-opacity duration-300 hover:bg-card/90',
+          'fixed left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full glass-card flex items-center justify-center transition-all duration-300 hover:scale-110 hover:glow-purple',
           showLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
-        aria-label="Previous section"
+        aria-label="Seção anterior"
       >
         <CaretLeft size={24} className="text-foreground" weight="bold" />
       </button>
@@ -45,10 +45,10 @@ export function NavigationArrows() {
       <button
         onClick={() => scroll('right')}
         className={cn(
-          'fixed right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm border border-border flex items-center justify-center transition-opacity duration-300 hover:bg-card/90',
+          'fixed right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 rounded-full glass-card flex items-center justify-center transition-all duration-300 hover:scale-110 hover:glow-purple',
           showRight ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
-        aria-label="Next section"
+        aria-label="Próxima seção"
       >
         <CaretRight size={24} className="text-foreground" weight="bold" />
       </button>
