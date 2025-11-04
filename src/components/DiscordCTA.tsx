@@ -1,13 +1,28 @@
 import { useTranslation } from 'react-i18next'
-import { DiscordLogo } from '@phosphor-icons/react'
+import { DiscordLogo, Copy, Check } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 import { Section } from './Section'
 import { Button } from '@/components/ui/button'
+import { toast } from 'sonner'
+import { useState } from 'react'
 
-const discordUrl = 'https://discord.gg/UTw6ATqCjG'
+const discordInvite = 'UTw6ATqCjG'
+const discordUrl = `https://discord.gg/${discordInvite}`
 
 export function DiscordCTA() {
   const { t } = useTranslation()
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyInvite = async () => {
+    try {
+      await navigator.clipboard.writeText(discordUrl)
+      setCopied(true)
+      toast.success(t('discord.copied', { defaultValue: 'Link do Discord copiado! Cole no seu navegador.' }))
+      setTimeout(() => setCopied(false), 2000)
+    } catch (error) {
+      toast.error(t('discord.copyError', { defaultValue: 'Erro ao copiar. Link: discord.gg/UTw6ATqCjG' }))
+    }
+  }
 
   return (
     <Section className="bg-gradient-to-b from-transparent via-primary/5 to-transparent">
@@ -29,17 +44,32 @@ export function DiscordCTA() {
             {t('discord.title')}
           </h2>
           
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-4 max-w-2xl mx-auto">
             {t('discord.desc')}
           </p>
+
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg glass-card mono text-sm text-primary">
+              <span>discord.gg/{discordInvite}</span>
+            </div>
+          </div>
 
           <Button
             size="lg"
             className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 glow-purple-hover transition-all"
-            onClick={() => window.open(discordUrl, '_blank')}
+            onClick={handleCopyInvite}
           >
-            <DiscordLogo className="mr-2" weight="fill" />
-            {t('discord.cta')}
+            {copied ? (
+              <>
+                <Check className="mr-2" weight="bold" />
+                {t('discord.ctaCopied', { defaultValue: 'Link Copiado!' })}
+              </>
+            ) : (
+              <>
+                <Copy className="mr-2" weight="bold" />
+                {t('discord.cta')}
+              </>
+            )}
           </Button>
         </div>
       </motion.div>
