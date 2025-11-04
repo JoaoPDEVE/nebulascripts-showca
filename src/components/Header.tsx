@@ -18,7 +18,6 @@ export function Header() {
     { label: t('nav.showcase'), id: 'showcase' },
     { label: t('nav.faq'), id: 'faq' },
     { label: t('nav.team'), id: 'team' },
-    { label: t('nav.discord'), id: 'discord' },
   ]
 
   useEffect(() => {
@@ -35,7 +34,7 @@ export function Header() {
       { threshold: 0.5 }
     )
 
-    const sections = ['hero', 'how-it-works', 'features', 'showcase', 'faq', 'team', 'discord']
+    const sections = ['hero', 'how-it-works', 'features', 'showcase', 'faq', 'team']
     sections.forEach((id) => {
       const element = document.getElementById(id)
       if (element) observer.observe(element)
