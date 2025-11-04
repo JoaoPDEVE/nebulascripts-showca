@@ -57,8 +57,8 @@
   "team": {
     "title": "Quem faz o projeto",
     "members": [
-      { "name": "CarlJohnsson", "role": "Desenvolvedor", "discord": "CarlJohnsson", "bio": "Criação de scripts e experiência do usuário." },
-      { "name": "j0_4_0alt", "role": "Desenvolvedor", "discord": "j0_4_0alt", "bio": "Automação e desempenho." }
+      { "name": "CarlJohnsson", "role": "Desenvolvedor Web Front-end", "discord": "CarlJohnsson", "bio": "Responsável pelo design do website, implementação de UI/UX e experiência visual." },
+      { "name": "j0_4_0alt", "role": "Desenvolvedor de Scripts e UX", "discord": "j0_4_0alt", "bio": "Responsável pelos scripts do Roblox e design da experiência do jogador." }
     ]
   },
   "faq": {

@@ -45,11 +45,14 @@ Present high-quality, legal Roblox scripts and utilities in a visually striking 
 - **Success criteria**: Responsive grid, accessible alt text, video embed works
 
 ### Team Presentation
-- **Functionality**: Display team members with Discord handles
-- **Purpose**: Humanize the project, provide direct contact points
+- **Functionality**: Display team members with Discord handles and roles
+- **Purpose**: Humanize the project, provide direct contact points, clarify team responsibilities
 - **Trigger**: Scroll to team section
-- **Progression**: See team cards → Note Discord handles → Can contact directly
+- **Progression**: See team cards → Note Discord handles and roles → Can contact directly
 - **Success criteria**: Discord usernames display correctly from i18n data
+- **Team Members**:
+  - **CarlJohnsson**: Front-end Web Developer - Responsible for website design, UI/UX implementation
+  - **j0_4_0alt**: Script Developer & User Experience - Responsible for Roblox scripts and player experience design
 
 ### FAQ Accordion
 - **Functionality**: Collapsible Q&A about compliance, purchase, support

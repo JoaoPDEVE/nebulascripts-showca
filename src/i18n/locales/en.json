@@ -57,8 +57,8 @@
   "team": {
     "title": "Who builds this",
     "members": [
-      { "name": "CarlJohnsson", "role": "Developer", "discord": "CarlJohnsson", "bio": "Script creation and user experience." },
-      { "name": "j0_4_0alt", "role": "Developer", "discord": "j0_4_0alt", "bio": "Automation and performance." }
+      { "name": "CarlJohnsson", "role": "Front-end Web Developer", "discord": "CarlJohnsson", "bio": "Responsible for website design, UI/UX implementation and visual experience." },
+      { "name": "j0_4_0alt", "role": "Script Developer & UX", "discord": "j0_4_0alt", "bio": "Responsible for Roblox scripts and player experience design." }
     ]
   },
   "faq": {
