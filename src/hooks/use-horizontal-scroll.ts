@@ -33,6 +33,12 @@ export function useHorizontalScroll(ref: RefObject<HTMLElement | null>) {
     const element = ref.current
     if (!element) return
 
+    const isMobile = window.innerWidth < 768
+
+    if (isMobile) {
+      return
+    }
+
     const handleWheel = throttle((e: WheelEvent) => {
       if (e.deltaY !== 0 && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         e.preventDefault()

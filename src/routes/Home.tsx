@@ -7,6 +7,7 @@ import { DiscordCTA } from '@/components/DiscordCTA'
 import { Team } from '@/components/Team'
 import { FAQ } from '@/components/FAQ'
 import { ScrollProgress } from '@/components/ScrollProgress'
+import { Footer } from '@/components/Footer'
 import { useHorizontalScroll } from '@/hooks/use-horizontal-scroll'
 
 export function Home() {
@@ -19,28 +20,31 @@ export function Home() {
       <div 
         ref={scrollContainerRef}
         data-horizontal-scroll
-        className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory h-full scroll-smooth"
+        className="md:flex md:overflow-x-auto md:overflow-y-hidden md:snap-x md:snap-mandatory overflow-y-auto overflow-x-hidden h-full scroll-smooth"
       >
-        <div id="hero" className="min-w-full snap-start flex-shrink-0">
+        <div id="hero" className="md:min-w-full md:snap-start md:flex-shrink-0">
           <Hero />
         </div>
-        <div id="how-it-works" className="min-w-full snap-start flex-shrink-0 overflow-y-auto">
+        <div id="how-it-works" className="md:min-w-full md:snap-start md:flex-shrink-0 md:overflow-y-auto">
           <HowItWorks />
         </div>
-        <div id="features" className="min-w-full snap-start flex-shrink-0 overflow-y-auto">
+        <div id="features" className="md:min-w-full md:snap-start md:flex-shrink-0 md:overflow-y-auto">
           <Features />
         </div>
-        <div id="showcase" className="min-w-full snap-start flex-shrink-0 overflow-y-auto">
+        <div id="showcase" className="md:min-w-full md:snap-start md:flex-shrink-0 md:overflow-y-auto">
           <Showcase />
         </div>
-        <div id="faq" className="min-w-full snap-start flex-shrink-0 overflow-y-auto">
+        <div id="faq" className="md:min-w-full md:snap-start md:flex-shrink-0 md:overflow-y-auto">
           <FAQ />
         </div>
-        <div id="team" className="min-w-full snap-start flex-shrink-0 overflow-y-auto">
+        <div id="team" className="md:min-w-full md:snap-start md:flex-shrink-0 md:overflow-y-auto">
           <Team />
         </div>
-        <div id="discord" className="min-w-full snap-start flex-shrink-0 overflow-y-auto">
+        <div id="discord" className="md:min-w-full md:snap-start md:flex-shrink-0 md:overflow-y-auto">
           <DiscordCTA />
+        </div>
+        <div className="md:hidden">
+          <Footer />
         </div>
       </div>
     </>

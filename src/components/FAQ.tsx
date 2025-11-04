@@ -26,7 +26,7 @@ export function FAQ() {
         transition={{ duration: 0.6 }}
         className="max-w-3xl mx-auto"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 px-4">
           {t('faq.title')}
         </h2>
 
@@ -35,12 +35,12 @@ export function FAQ() {
             <AccordionItem
               key={i}
               value={`item-${i}`}
-              className="glass-card px-6 rounded-xl border-white/10"
+              className="glass-card px-4 md:px-6 rounded-xl border-white/10"
             >
-              <AccordionTrigger className="text-left hover:no-underline py-4">
-                <span className="font-semibold">{item.q}</span>
+              <AccordionTrigger className="text-left hover:no-underline py-4 text-sm md:text-base">
+                <span className="font-semibold pr-4">{item.q}</span>
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-4">
+              <AccordionContent className="text-sm md:text-base text-muted-foreground pb-4">
                 {item.a}
               </AccordionContent>
             </AccordionItem>

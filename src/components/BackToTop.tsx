@@ -11,11 +11,22 @@ export function BackToTop() {
     if (!container) return
 
     const handleScroll = () => {
-      setShow(container.scrollLeft > 100)
+      const isMobile = window.innerWidth < 768
+      if (isMobile) {
+        setShow(container.scrollTop > 100)
+      } else {
+        setShow(container.scrollLeft > 100)
+      }
     }
 
+    handleScroll()
     container.addEventListener('scroll', handleScroll, { passive: true })
-    return () => container.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleScroll)
+    
+    return () => {
+      container.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
   }, [])
 
   const scrollToTop = () => {
@@ -32,7 +43,7 @@ export function BackToTop() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          className="fixed bottom-6 left-6 z-40 lg:bottom-8 lg:left-8"
+          className="fixed bottom-6 right-6 z-40 md:bottom-6 md:left-6 md:right-auto"
         >
           <Button
             onClick={scrollToTop}

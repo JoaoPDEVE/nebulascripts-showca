@@ -21,22 +21,22 @@ export function Showcase() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 px-4">
           {t('showcase.title')}
         </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-sm md:text-base text-muted-foreground mb-12 max-w-2xl mx-auto px-4">
           {t('showcase.caption')}
         </p>
 
         <div className="mb-8">
           <div className="relative aspect-video glass-card rounded-xl overflow-hidden group cursor-pointer hover:border-primary/30 transition-colors">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center mb-4 mx-auto group-hover:bg-white/20 transition-colors">
-                  <Play weight="fill" size={32} className="text-primary ml-1" />
+              <div className="text-center px-4">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center mb-4 mx-auto group-hover:bg-white/20 transition-colors">
+                  <Play weight="fill" size={28} className="md:w-8 md:h-8 text-primary ml-1" />
                 </div>
-                <p className="text-lg font-medium">{t('showcase.videoLabel')}</p>
-                <p className="text-sm text-muted-foreground mt-2">
+                <p className="text-base md:text-lg font-medium">{t('showcase.videoLabel')}</p>
+                <p className="text-xs md:text-sm text-muted-foreground mt-2">
                   (YouTube embed placeholder)
                 </p>
               </div>
@@ -44,7 +44,7 @@ export function Showcase() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {placeholderImages.map((src, i) => (
             <motion.div
               key={i}

@@ -86,20 +86,20 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-header">
-      <div className="container mx-auto px-6 max-w-6xl">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-3 group" onClick={() => scrollToSection('hero')}>
-            <div className="relative w-10 h-10">
+          <Link to="/" className="flex items-center gap-2 md:gap-3 group" onClick={() => scrollToSection('hero')}>
+            <div className="relative w-8 h-8 md:w-10 md:h-10">
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-accent to-primary animate-pulse opacity-60 blur-sm" />
-              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center glow-purple-hover transition-all shadow-lg">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="relative w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center glow-purple-hover transition-all shadow-lg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-6 md:h-6">
                   <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" fillOpacity="0.9"/>
                   <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fillOpacity="0.7"/>
                   <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fillOpacity="0.7"/>
                 </svg>
               </div>
             </div>
-            <span className="text-xl font-bold text-gradient">Kaelix Hub</span>
+            <span className="text-lg md:text-xl font-bold text-gradient">Kaelix Hub</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -122,7 +122,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <Popover open={communityOpen} onOpenChange={setCommunityOpen}>
               <PopoverTrigger asChild>
                 <Button
@@ -164,11 +164,11 @@ export function Header() {
             <Button
               size="icon"
               variant="ghost"
-              className="md:hidden"
+              className="md:hidden w-9 h-9"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             >
-              {mobileMenuOpen ? <X /> : <List />}
+              {mobileMenuOpen ? <X size={20} /> : <List size={20} />}
             </Button>
           </div>
         </div>
@@ -181,7 +181,7 @@ export function Header() {
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={cn(
-                    'px-4 py-2 text-left rounded-md transition-colors',
+                    'px-4 py-2 text-left rounded-md transition-colors text-sm',
                     activeSection === item.id
                       ? 'text-foreground bg-white/5 font-medium'
                       : 'text-muted-foreground hover:text-foreground hover:bg-white/5'
@@ -196,7 +196,7 @@ export function Header() {
                   className="w-full flex items-center justify-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white"
                   size="sm"
                 >
-                  <DiscordLogo weight="fill" />
+                  <DiscordLogo weight="fill" size={18} />
                   <span>{t('discord.open') || 'Abrir Discord'}</span>
                 </Button>
                 <Button
@@ -205,7 +205,7 @@ export function Header() {
                   className="w-full flex items-center justify-center gap-2"
                   size="sm"
                 >
-                  {copied ? <Check weight="bold" /> : <Copy />}
+                  {copied ? <Check weight="bold" size={18} /> : <Copy size={18} />}
                   <span>{copied ? (t('discord.copied') || 'Copiado!') : (t('discord.copy') || 'Copiar Link')}</span>
                 </Button>
               </div>

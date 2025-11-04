@@ -9,15 +9,29 @@ export function ScrollProgress() {
     if (!container) return
 
     const updateProgress = () => {
-      const { scrollLeft, scrollWidth, clientWidth } = container
-      const scrollableWidth = scrollWidth - clientWidth
-      const currentProgress = scrollableWidth > 0 ? (scrollLeft / scrollableWidth) * 100 : 0
-      setProgress(currentProgress)
+      const isMobile = window.innerWidth < 768
+      
+      if (isMobile) {
+        const { scrollTop, scrollHeight, clientHeight } = container
+        const scrollableHeight = scrollHeight - clientHeight
+        const currentProgress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0
+        setProgress(currentProgress)
+      } else {
+        const { scrollLeft, scrollWidth, clientWidth } = container
+        const scrollableWidth = scrollWidth - clientWidth
+        const currentProgress = scrollableWidth > 0 ? (scrollLeft / scrollableWidth) * 100 : 0
+        setProgress(currentProgress)
+      }
     }
 
     updateProgress()
     container.addEventListener('scroll', updateProgress, { passive: true })
-    return () => container.removeEventListener('scroll', updateProgress)
+    window.addEventListener('resize', updateProgress)
+    
+    return () => {
+      container.removeEventListener('scroll', updateProgress)
+      window.removeEventListener('resize', updateProgress)
+    }
   }, [])
 
   return (

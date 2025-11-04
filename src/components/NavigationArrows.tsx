@@ -5,8 +5,21 @@ import { cn } from '@/lib/utils'
 export function NavigationArrows() {
   const [showLeft, setShowLeft] = useState(false)
   const [showRight, setShowRight] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) return
+
     const container = document.querySelector('[data-horizontal-scroll]') as HTMLElement
     if (!container) return
 
@@ -19,7 +32,7 @@ export function NavigationArrows() {
     handleScroll()
     container.addEventListener('scroll', handleScroll)
     return () => container.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isMobile])
 
   const scroll = (direction: 'left' | 'right') => {
     const container = document.querySelector('[data-horizontal-scroll]') as HTMLElement
@@ -28,6 +41,8 @@ export function NavigationArrows() {
     const scrollAmount = direction === 'left' ? -container.clientWidth : container.clientWidth
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
   }
+
+  if (isMobile) return null
 
   return (
     <>

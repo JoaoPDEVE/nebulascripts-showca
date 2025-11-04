@@ -31,7 +31,7 @@ export function DiscordCTA() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="glass-card p-12 rounded-2xl text-center relative overflow-hidden"
+        className="glass-card p-8 md:p-12 rounded-2xl text-center relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 pointer-events-none" />
         
@@ -40,23 +40,23 @@ export function DiscordCTA() {
             <DiscordLogo weight="fill" size={32} className="text-primary" />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-4">
             {t('discord.title')}
           </h2>
           
-          <p className="text-lg text-muted-foreground mb-4 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground mb-4 max-w-2xl mx-auto px-4">
             {t('discord.desc')}
           </p>
 
           <div className="mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg glass-card mono text-sm text-primary">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg glass-card mono text-xs sm:text-sm text-primary">
               <span>discord.gg/{discordInvite}</span>
             </div>
           </div>
 
           <Button
             size="lg"
-            className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 glow-purple-hover transition-all"
+            className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 glow-purple-hover transition-all"
             onClick={handleCopyInvite}
           >
             {copied ? (

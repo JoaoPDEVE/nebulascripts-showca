@@ -14,11 +14,11 @@ export function HowItWorks() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 px-4">
           {t('how.title')}
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8">
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -26,16 +26,16 @@ export function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="glass-card p-6 rounded-xl hover:border-primary/30 transition-colors"
+              className="glass-card p-5 md:p-6 rounded-xl hover:border-primary/30 transition-colors"
             >
-              <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-              <p className="text-muted-foreground">{step.desc}</p>
+              <h3 className="text-lg md:text-xl font-semibold mb-3">{step.title}</h3>
+              <p className="text-sm md:text-base text-muted-foreground">{step.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        <div className="glass-card p-6 rounded-xl border-accent/30 bg-gradient-to-r from-primary/5 to-accent/5">
-          <p className="text-center text-sm leading-relaxed">
+        <div className="glass-card p-5 md:p-6 rounded-xl border-accent/30 bg-gradient-to-r from-primary/5 to-accent/5">
+          <p className="text-center text-xs sm:text-sm leading-relaxed">
             {t('how.note')}
           </p>
         </div>
