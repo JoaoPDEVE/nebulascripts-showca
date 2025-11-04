@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How it works",
+    "showcase": "Showcase",
+    "faq": "FAQ",
+    "team": "Team",
+    "contact": "Contact",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "buyNow": "Buy"
+  },
+  "hero": {
+    "badge": "100% compliant",
+    "title": "Roblox scripts that are legal, stable and easy to use",
+    "subtitle": "Utilities and QoL improvements that respect Roblox rules. No exploits, no executors, no bypass — just safe tools with clear docs.",
+    "primaryCta": "Join Discord",
+    "secondaryCta": "See how it works",
+    "highlights": [
+      "No exploits, no executors",
+      "Updates and support on Discord",
+      "Clear docs in PT/EN"
+    ]
+  },
+  "how": {
+    "title": "How it works",
+    "steps": [
+      { "title": "1) Explore the product", "desc": "See the demo, features and requirements. All transparent." },
+      { "title": "2) Talk to us on Discord", "desc": "Join our server and ask questions before buying." },
+      { "title": "3) Access and onboarding", "desc": "After purchase, you receive instructions and support to get started in minutes." }
+    ],
+    "note": "Our scripts do not use exploits. We only work with allowed capabilities, respecting fair play."
+  },
+  "features": {
+    "title": "Highlighted features",
+    "list": [
+      { "title": "Safe compatibility", "desc": "Built with practices that respect Roblox guidelines." },
+      { "title": "Simple setup", "desc": "Straightforward onboarding and objective documentation." },
+      { "title": "Regular updates", "desc": "Continuous improvements based on community feedback." },
+      { "title": "Smooth performance", "desc": "Careful performance and resource usage." },
+      { "title": "Discord support", "desc": "Quick help, answered questions and release notes." },
+      { "title": "No clutter", "desc": "No aggressive pop-ups, invasive ads or watermarks." }
+    ]
+  },
+  "showcase": {
+    "title": "Product preview",
+    "caption": "Screenshots and a demo video showing the interface and usage flow.",
+    "videoLabel": "Watch the demo",
+    "imagesAlt": "Product demo image"
+  },
+  "discord": {
+    "title": "Join our Discord",
+    "desc": "Enter the server for support, updates and purchase details.",
+    "cta": "Join Discord"
+  },
+  "team": {
+    "title": "Who builds this",
+    "members": [
+      { "name": "CarlJohnsson", "role": "Developer", "discord": "CarlJohnsson", "bio": "Script creation and user experience." },
+      { "name": "j0_4_0alt", "role": "Developer", "discord": "j0_4_0alt", "bio": "Automation and performance." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      { "q": "Does this break Roblox rules?", "a": "No. We focus on utilities that respect Roblox Terms. We do not offer exploits, executors or bypass." },
+      { "q": "How do I receive the product?", "a": "After purchase on Discord, we provide access and step-by-step instructions." },
+      { "q": "Do you offer refunds?", "a": "We review cases individually. Contact us on Discord if you have an issue." },
+      { "q": "Do you offer support?", "a": "Yes, directly in our Discord server." },
+      { "q": "What are the requirements?", "a": "They are listed in the docs. We keep everything simple and accessible." },
+      { "q": "Can I use it anywhere?", "a": "Always respect the rules of the experiences you join." }
+    ]
+  },
+  "footer": {
+    "legal": "© {{year}} NebulaScripts. All rights reserved.",
+    "links": {
+      "terms": "Terms of Use",
+      "privacy": "Privacy"
+    }
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "content": "By using this site and our products, you agree to respect Roblox Terms and applicable laws. We do not guarantee compatibility with third-party tools that break rules. Misuse may result in loss of access."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "content": "We collect the minimum necessary for support and access (for example, contact via Discord). We do not sell your data. See the Discord server for operational details."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "features": "Recursos",
+    "howItWorks": "Como funciona",
+    "showcase": "Preview",
+    "faq": "FAQ",
+    "team": "Equipe",
+    "contact": "Contato",
+    "terms": "Termos",
+    "privacy": "Privacidade",
+    "buyNow": "Comprar"
+  },
+  "hero": {
+    "badge": "100% em conformidade",
+    "title": "Scripts de Roblox legais, estáveis e fáceis de usar",
+    "subtitle": "Apresentamos utilidades e melhorias de qualidade de vida que respeitam as regras do Roblox. Nada de exploits, executores ou bypass — apenas ferramentas seguras e bem documentadas.",
+    "primaryCta": "Entrar no Discord",
+    "secondaryCta": "Ver como funciona",
+    "highlights": [
+      "Sem exploits, sem executores",
+      "Atualizações e suporte no Discord",
+      "Documentação clara em PT/EN"
+    ]
+  },
+  "how": {
+    "title": "Como funciona",
+    "steps": [
+      { "title": "1) Conheça o produto", "desc": "Veja a demonstração, recursos e requisitos. Tudo transparente." },
+      { "title": "2) Fale conosco no Discord", "desc": "Entre no servidor e tire dúvidas antes de comprar." },
+      { "title": "3) Acesso e onboarding", "desc": "Após a compra, você recebe instruções e suporte para começar em minutos." }
+    ],
+    "note": "Nossos scripts não utilizam exploits. Trabalhamos somente com funcionalidades permitidas e respeitando o fair play."
+  },
+  "features": {
+    "title": "Recursos em destaque",
+    "list": [
+      { "title": "Compatibilidade segura", "desc": "Desenvolvidos com práticas que respeitam as diretrizes do Roblox." },
+      { "title": "Configuração simples", "desc": "Onboarding direto e documentação objetiva para iniciar sem complicação." },
+      { "title": "Atualizações recorrentes", "desc": "Melhorias constantes com base no feedback da comunidade." },
+      { "title": "Desempenho suave", "desc": "Cuidados com performance e uso eficiente de recursos." },
+      { "title": "Suporte no Discord", "desc": "Ajuda rápida, perguntas respondidas e avisos de novas versões." },
+      { "title": "Sem ruído", "desc": "Nada de pop-ups agressivos, propagandas invasivas ou marcas d'água." }
+    ]
+  },
+  "showcase": {
+    "title": "Preview do produto",
+    "caption": "Screenshots e vídeo demonstrativo mostrando a interface e o fluxo de uso.",
+    "videoLabel": "Assista à demo",
+    "imagesAlt": "Imagem da demonstração do produto"
+  },
+  "discord": {
+    "title": "Junte-se ao nosso Discord",
+    "desc": "Entre no servidor para suporte, atualizações e detalhes de compra.",
+    "cta": "Entrar no Discord"
+  },
+  "team": {
+    "title": "Quem faz o projeto",
+    "members": [
+      { "name": "CarlJohnsson", "role": "Desenvolvedor", "discord": "CarlJohnsson", "bio": "Criação de scripts e experiência do usuário." },
+      { "name": "j0_4_0alt", "role": "Desenvolvedor", "discord": "j0_4_0alt", "bio": "Automação e desempenho." }
+    ]
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "items": [
+      { "q": "Isso viola as regras do Roblox?", "a": "Não. Nosso foco são utilidades que respeitam os Termos do Roblox. Não oferecemos exploits, executores ou bypass." },
+      { "q": "Como recebo o produto?", "a": "Após a compra via Discord, fornecemos acesso e instruções de uso passo a passo." },
+      { "q": "Há reembolso?", "a": "Analisamos casos individualmente. Fale conosco no Discord se tiver algum problema." },
+      { "q": "Vocês oferecem suporte?", "a": "Sim, diretamente no nosso servidor do Discord." },
+      { "q": "Quais são os requisitos?", "a": "São informados na documentação. Mantemos tudo simples e acessível." },
+      { "q": "Posso usar em qualquer lugar?", "a": "Respeite sempre as regras das experiências em que você participa." }
+    ]
+  },
+  "footer": {
+    "legal": "© {{year}} NebulaScripts. Todos os direitos reservados.",
+    "links": {
+      "terms": "Termos de Uso",
+      "privacy": "Privacidade"
+    }
+  },
+  "terms": {
+    "title": "Termos de Uso",
+    "content": "Usando este site e nossos produtos, você concorda em respeitar os Termos do Roblox e leis aplicáveis. Não garantimos funcionamento com ferramentas de terceiros que violem regras. Uso indevido pode resultar em perda de acesso."
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "content": "Coletamos o mínimo necessário para suporte e acesso (por exemplo, contato via Discord). Não vendemos seus dados. Consulte o servidor do Discord para mais detalhes operacionais."
+  }
+}
