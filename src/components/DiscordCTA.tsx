@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Section } from './Section'
 import { Button } from '@/components/ui/button'
 
-const discordUrl = import.meta.env.VITE_DISCORD_INVITE || '#'
+const discordUrl = 'https://discord.gg/UTw6ATqCjG'
 
 export function DiscordCTA() {
   const { t } = useTranslation()

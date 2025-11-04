@@ -4,7 +4,7 @@ import { Check, ArrowDown, Code, ShieldCheck, Lightning } from '@phosphor-icons/
 import { Badge } from './Badge'
 import { Button } from '@/components/ui/button'
 
-const discordUrl = import.meta.env.VITE_DISCORD_INVITE || '#'
+const discordUrl = 'https://discord.gg/UTw6ATqCjG'
 
 export function Hero() {
   const { t } = useTranslation()
