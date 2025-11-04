@@ -12,7 +12,7 @@ export function Hero() {
   const scrollToHowItWorks = () => {
     const element = document.getElementById('how-it-works')
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' })
     }
   }
 

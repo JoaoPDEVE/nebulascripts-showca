@@ -17,7 +17,7 @@ export function Header() {
     }
     const element = document.getElementById(id)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' })
       setMobileMenuOpen(false)
     }
   }
@@ -38,7 +38,7 @@ export function Header() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center glow-purple-hover transition-all">
               <span className="text-white font-bold text-lg">N</span>
             </div>
-            <span className="text-xl font-bold text-gradient">NebulaScripts</span>
+            <span className="text-xl font-bold text-gradient">Kaelix Hub</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
