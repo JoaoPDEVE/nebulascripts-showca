@@ -34,9 +34,9 @@ export function HowItWorks() {
           ))}
         </div>
 
-        <div className="glass-card p-6 rounded-xl border-primary/20">
-          <p className="text-center text-sm text-muted-foreground">
-            <span className="font-semibold text-primary">⚠️ {t('how.note')}</span>
+        <div className="glass-card p-6 rounded-xl border-accent/30 bg-gradient-to-r from-primary/5 to-accent/5">
+          <p className="text-center text-sm leading-relaxed">
+            {t('how.note')}
           </p>
         </div>
       </motion.div>

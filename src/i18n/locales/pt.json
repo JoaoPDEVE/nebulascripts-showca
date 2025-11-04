@@ -12,15 +12,15 @@
     "buyNow": "Comprar"
   },
   "hero": {
-    "badge": "100% em conformidade",
-    "title": "Scripts de Roblox legais, estáveis e fáceis de usar",
-    "subtitle": "Apresentamos utilidades e melhorias de qualidade de vida que respeitam as regras do Roblox. Nada de exploits, executores ou bypass — apenas ferramentas seguras e bem documentadas.",
+    "badge": "Scripts profissionalmente desenvolvidos",
+    "title": "Scripts Roblox de alta qualidade, seguros e bem codificados",
+    "subtitle": "Desenvolvemos scripts premium com código limpo, arquitetura robusta e performance otimizada. Cada linha é cuidadosamente testada para garantir estabilidade, segurança e conformidade total com as diretrizes do Roblox.",
     "primaryCta": "Entrar no Discord",
     "secondaryCta": "Ver como funciona",
     "highlights": [
-      "Sem exploits, sem executores",
-      "Atualizações e suporte no Discord",
-      "Documentação clara em PT/EN"
+      "Código limpo e otimizado",
+      "Arquitetura profissional",
+      "Testes rigorosos de qualidade"
     ]
   },
   "how": {
@@ -30,17 +30,17 @@
       { "title": "2) Fale conosco no Discord", "desc": "Entre no servidor e tire dúvidas antes de comprar." },
       { "title": "3) Acesso e onboarding", "desc": "Após a compra, você recebe instruções e suporte para começar em minutos." }
     ],
-    "note": "Nossos scripts não utilizam exploits. Trabalhamos somente com funcionalidades permitidas e respeitando o fair play."
+    "note": "✨ Nossos scripts são desenvolvidos profissionalmente com código de alta qualidade, seguindo as melhores práticas de desenvolvimento e respeitando totalmente as diretrizes do Roblox. Não utilizamos exploits, executores ou qualquer prática que viole os termos de serviço."
   },
   "features": {
-    "title": "Recursos em destaque",
+    "title": "Por que nossos scripts são superiores",
     "list": [
-      { "title": "Compatibilidade segura", "desc": "Desenvolvidos com práticas que respeitam as diretrizes do Roblox." },
-      { "title": "Configuração simples", "desc": "Onboarding direto e documentação objetiva para iniciar sem complicação." },
-      { "title": "Atualizações recorrentes", "desc": "Melhorias constantes com base no feedback da comunidade." },
-      { "title": "Desempenho suave", "desc": "Cuidados com performance e uso eficiente de recursos." },
-      { "title": "Suporte no Discord", "desc": "Ajuda rápida, perguntas respondidas e avisos de novas versões." },
-      { "title": "Sem ruído", "desc": "Nada de pop-ups agressivos, propagandas invasivas ou marcas d'água." }
+      { "title": "Código profissional", "desc": "Scripts desenvolvidos com padrões de indústria, clean code e arquitetura escalável." },
+      { "title": "Performance otimizada", "desc": "Algoritmos eficientes, uso mínimo de recursos e latência reduzida." },
+      { "title": "Segurança em primeiro lugar", "desc": "100% em conformidade com diretrizes do Roblox, sem exploits ou práticas arriscadas." },
+      { "title": "Testes rigorosos", "desc": "Cada funcionalidade passa por múltiplas fases de testes antes do lançamento." },
+      { "title": "Suporte técnico especializado", "desc": "Equipe de desenvolvedores disponível no Discord para suporte direto." },
+      { "title": "Documentação detalhada", "desc": "Guias completos, exemplos de uso e troubleshooting em português e inglês." }
     ]
   },
   "showcase": {
