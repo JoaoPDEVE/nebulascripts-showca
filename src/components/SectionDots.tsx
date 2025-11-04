@@ -9,7 +9,7 @@ const sections = [
   { id: 'showcase', labelKey: 'nav.showcase' },
   { id: 'faq', labelKey: 'nav.faq' },
   { id: 'team', labelKey: 'nav.team' },
-  { id: 'discord', labelKey: 'nav.contact' },
+  { id: 'discord', labelKey: 'nav.discord' },
 ]
 
 export function SectionDots() {

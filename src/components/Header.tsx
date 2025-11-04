@@ -18,6 +18,7 @@ export function Header() {
     { label: t('nav.showcase'), id: 'showcase' },
     { label: t('nav.faq'), id: 'faq' },
     { label: t('nav.team'), id: 'team' },
+    { label: t('nav.discord'), id: 'discord' },
   ]
 
   useEffect(() => {
