@@ -39,29 +39,168 @@ A beautiful, dark-themed marketing website for presenting Roblox scripts and uti
    npm install
    ```
 
-3. **Set environment variables** (optional):
-   Create a `.env` file in the root:
-   ```env
-   VITE_DISCORD_INVITE=https://discord.gg/YOUR-INVITE-CODE
-   ```
-   If not set, Discord buttons will use `#` as fallback.
-
-4. **Run development server**:
+3. **Run development server**:
    ```bash
    npm run dev
    ```
    Open http://localhost:5173 in your browser.
 
-5. **Build for production**:
+4. **Build for production**:
    ```bash
    npm run build
    ```
    Output will be in the `dist/` folder.
 
-6. **Preview production build**:
+5. **Preview production build**:
    ```bash
    npm run preview
    ```
+
+## 🚀 Deploy para Produção
+
+### ✅ Checklist Pré-Deploy
+
+Antes de colocar o site no ar, verifique:
+
+- [ ] Todas as traduções estão corretas em PT e EN
+- [ ] Link do Discord está configurado (veja `src/components/Header.tsx` e `Hero.tsx`)
+- [ ] Imagens de showcase foram substituídas (se aplicável)
+- [ ] Favicon está presente em `public/favicon.svg`
+- [ ] Meta tags no `index.html` estão atualizadas
+- [ ] Testado em mobile, tablet e desktop
+- [ ] Testado nos navegadores principais (Chrome, Firefox, Safari)
+
+### 🌐 Opções de Hospedagem
+
+#### Opção 1: Vercel (Recomendado - Grátis)
+
+1. Crie uma conta em [vercel.com](https://vercel.com)
+2. Instale o Vercel CLI:
+   ```bash
+   npm i -g vercel
+   ```
+3. Execute no diretório do projeto:
+   ```bash
+   vercel
+   ```
+4. Siga as instruções na tela
+5. Seu site estará online em minutos!
+
+**Configuração automática:**
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Install Command: `npm install`
+
+#### Opção 2: Netlify (Grátis)
+
+1. Crie uma conta em [netlify.com](https://netlify.com)
+2. Arraste a pasta `dist` (após `npm run build`) para o Netlify Drop
+3. Ou conecte seu repositório Git para deploy automático
+
+**Configurações:**
+- Build command: `npm run build`
+- Publish directory: `dist`
+
+#### Opção 3: GitHub Pages (Grátis)
+
+1. Instale gh-pages:
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+
+2. Adicione ao `package.json`:
+   ```json
+   {
+     "scripts": {
+       "deploy": "npm run build && gh-pages -d dist"
+     },
+     "homepage": "https://seuusuario.github.io/seu-repo"
+   }
+   ```
+
+3. Execute:
+   ```bash
+   npm run deploy
+   ```
+
+4. Configure GitHub Pages para usar a branch `gh-pages`
+
+#### Opção 4: Servidor Próprio (VPS/Cloud)
+
+1. Build do projeto:
+   ```bash
+   npm run build
+   ```
+
+2. Copie a pasta `dist` para seu servidor
+
+3. Configure um servidor web (Nginx exemplo):
+   ```nginx
+   server {
+       listen 80;
+       server_name seu-dominio.com;
+       root /var/www/kaelix-hub/dist;
+       index index.html;
+
+       location / {
+           try_files $uri $uri/ /index.html;
+       }
+
+       # Compressão
+       gzip on;
+       gzip_types text/css application/javascript image/svg+xml;
+   }
+   ```
+
+### 🔧 Configurações Avançadas
+
+#### SSL/HTTPS
+
+**Vercel/Netlify:** SSL automático incluído ✅
+
+**Servidor próprio:** Use [Let's Encrypt](https://letsencrypt.org/):
+```bash
+sudo certbot --nginx -d seu-dominio.com
+```
+
+#### Domínio Customizado
+
+**Vercel:**
+1. Vá em Settings → Domains
+2. Adicione seu domínio
+3. Configure os DNS records
+
+**Netlify:**
+1. Vá em Domain Settings
+2. Add custom domain
+3. Configure DNS
+
+#### Performance
+
+O site já está otimizado com:
+- ✅ Code splitting automático (Vite)
+- ✅ Lazy loading de rotas
+- ✅ CSS minificado
+- ✅ Assets otimizados
+- ✅ Preconnect para Google Fonts
+
+### 📊 Monitoramento
+
+Após o deploy, considere adicionar:
+
+- **Google Analytics:** Para estatísticas de visitantes
+- **Sentry:** Para monitoramento de erros
+- **Vercel Analytics:** Analytics automático no Vercel
+
+### 🔄 Updates Contínuos
+
+**Processo recomendado:**
+
+1. Faça alterações localmente
+2. Teste com `npm run dev`
+3. Build e preview: `npm run build && npm run preview`
+4. Commit e push para Git
+5. Deploy automático (Vercel/Netlify) ou manual
 
 ## 📁 Project Structure
 

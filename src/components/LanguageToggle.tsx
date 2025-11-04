@@ -14,7 +14,11 @@ export function LanguageToggle() {
 
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang)
-    localStorage.setItem('language', lang)
+    try {
+      localStorage.setItem('language', lang)
+    } catch (e) {
+      console.warn('Não foi possível salvar preferência de idioma')
+    }
     toast.success(lang === 'pt' ? 'Idioma alterado para Português' : 'Language changed to English', {
       duration: 2000,
     })

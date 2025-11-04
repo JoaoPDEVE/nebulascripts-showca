@@ -22,7 +22,7 @@ export function Home() {
         data-horizontal-scroll
         className="md:flex md:overflow-x-auto md:overflow-y-hidden md:snap-x md:snap-mandatory overflow-y-auto overflow-x-hidden h-full scroll-smooth"
       >
-        <div id="hero" className="md:min-w-full md:snap-start md:flex-shrink-0">
+        <div id="hero" className="md:min-w-full md:snap-start md:flex-shrink-0 flex flex-col md:block">
           <Hero />
         </div>
         <div id="how-it-works" className="md:min-w-full md:snap-start md:flex-shrink-0 md:overflow-y-auto">
@@ -43,9 +43,7 @@ export function Home() {
         <div id="discord" className="md:min-w-full md:snap-start md:flex-shrink-0 md:overflow-y-auto">
           <DiscordCTA />
         </div>
-        <div className="md:hidden">
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </>
   )
