@@ -3,6 +3,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { SectionDots } from '@/components/SectionDots'
 import { NavigationArrows } from '@/components/NavigationArrows'
+import { AnimatedBackground } from '@/components/AnimatedBackground'
 import { Home } from '@/routes/Home'
 import { Terms } from '@/routes/Terms'
 import { Privacy } from '@/routes/Privacy'
@@ -14,9 +15,10 @@ function AppContent() {
   const isHomePage = location.pathname === '/'
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden">
+    <div className="h-screen flex flex-col overflow-hidden relative">
+      <AnimatedBackground />
       <Header />
-      <main className="flex-1 overflow-hidden">
+      <main className="flex-1 overflow-hidden relative z-10">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={
