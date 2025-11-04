@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { List, X } from '@phosphor-icons/react'
+import { List, X, DiscordLogo, Check } from '@phosphor-icons/react'
 import { LanguageToggle } from './LanguageToggle'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { toast } from 'sonner'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
+  const [copied, setCopied] = useState(false)
   const { t } = useTranslation()
   const location = useLocation()
+  
+  const discordLink = 'https://discord.gg/UTw6ATqCjG'
 
   const navItems = [
     { label: t('nav.howItWorks'), id: 'how-it-works' },
@@ -55,6 +59,17 @@ export function Header() {
     }
   }
 
+  const copyDiscordLink = async () => {
+    try {
+      await navigator.clipboard.writeText(discordLink)
+      setCopied(true)
+      toast.success(t('discord.copied') || 'Link do Discord copiado!')
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      toast.error(t('discord.error') || 'Erro ao copiar link')
+    }
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-header">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -94,6 +109,14 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <Button
+              onClick={copyDiscordLink}
+              className="hidden md:flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground glow-purple-hover"
+              size="sm"
+            >
+              {copied ? <Check weight="bold" /> : <DiscordLogo weight="fill" />}
+              <span>{copied ? t('discord.copied') || 'Copiado!' : 'Discord'}</span>
+            </Button>
             <LanguageToggle />
             <Button
               size="icon"
@@ -123,6 +146,14 @@ export function Header() {
                   {item.label}
                 </button>
               ))}
+              <Button
+                onClick={copyDiscordLink}
+                className="w-full mt-2 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
+                size="sm"
+              >
+                {copied ? <Check weight="bold" /> : <DiscordLogo weight="fill" />}
+                <span>{copied ? t('discord.copied') || 'Copiado!' : 'Discord'}</span>
+              </Button>
             </div>
           </nav>
         )}

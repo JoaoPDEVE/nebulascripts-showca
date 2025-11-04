@@ -53,7 +53,9 @@
   "discord": {
     "title": "Join our Discord",
     "desc": "Enter the server for support, updates and purchase details.",
-    "cta": "Join Discord"
+    "cta": "Join Discord",
+    "copied": "Link copied!",
+    "error": "Failed to copy link"
   },
   "team": {
     "title": "Who builds this",

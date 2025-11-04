@@ -53,7 +53,9 @@
   "discord": {
     "title": "Junte-se ao nosso Discord",
     "desc": "Entre no servidor para suporte, atualizações e detalhes de compra.",
-    "cta": "Entrar no Discord"
+    "cta": "Entrar no Discord",
+    "copied": "Link copiado!",
+    "error": "Erro ao copiar link"
   },
   "team": {
     "title": "Quem faz o projeto",
